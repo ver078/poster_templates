@@ -48,7 +48,7 @@ padding: 0;
 }
 body {
 margin: 0;
-font-size: $body_textsize$;
+font-size: 32pt;
 width: $poster_width$;
 height: $poster_height$;
 padding: 0;
@@ -81,9 +81,9 @@ margin-top: 6%;
 
 }
 .poster_body {
--webkit-column-count: $column_numbers$; /* Chrome, Safari, Opera */
--moz-column-count: $column_numbers$; /* Firefox */
-column-count: $column_numbers$;
+-webkit-column-count: 2; /* Chrome, Safari, Opera */
+-moz-column-count: 2; /* Firefox */
+column-count: 2;
 -webkit-column-fill: auto;
 -moz-column-fill: auto;
 column-fill: auto;
@@ -115,9 +115,9 @@ font-weight: normal;
 }
 .poster_body_wrap{
 position: absolute;
-top: calc($poster_height$ * 0.25);
+top: calc($poster_height$ * 0.23);
 width: 90%;
-height: calc($poster_height$ * 0.63);
+height: calc($poster_height$ * 0.65);
 padding-top: calc($poster_height$ * 0.01);
 padding-bottom: calc($poster_height$ * 0.01);
 margin-left: 5%;
@@ -161,20 +161,22 @@ font-weight: normal;
   margin-top: 2%;
   margin-left: 5%;
   margin-right: 20%;
-  font-size: 44pt;
+  font-size: 40pt;
 }
 .introduction p{
   margin-bottom: 0;
 }
 img {
-margin-top: 2cm;
-margin-bottom: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+
 }
 .section {
   padding: 0.2em;
 }
 .poster_body h1 {
-text-align: center;
 font-size: 60pt;
 margin-top: 2mm;
 margin-bottom: 2mm;
@@ -183,7 +185,6 @@ font-weight: bold;
 .poster_body h2 {
 color: $sectitle2_textcol$;
 font-size: 44pt;
-padding-left: 4mm;
 font-weight: bold;
 }
 .span h1 {
@@ -241,8 +242,6 @@ padding-bottom: 3mm;
 code {
 font-size: 25pt;
 font-family: monospace;
-background-color: #00808024;
-color: #0b4545;
 padding: 1.2mm;
 border-radius: 2mm;
 }
@@ -265,10 +264,9 @@ caption {
 margin-bottom: 10px;
 }
 .poster_body p {
-margin-right: 4mm;
-margin-left: 4mm;
-margin-top: 6mm;
-margin-bottom: 10mm;
+margin-top: 4mm;
+margin-bottom: 6mm;
+margin-right: 6mm;
 }
 .poster_body ol {
 margin-right: 4mm;
@@ -278,8 +276,36 @@ margin-left: 4mm;
 margin-right: 4mm;
 margin-left: 4mm;
 }
+
+.level2 {
+  padding: 0;
+}
 .references p {
 font-size: 20pt;
+}
+ 
+#new_refs {
+  margin-top: 95%;
+  margin-left: 5%;
+  margin-right: 5%;
+  
+}
+
+#new_refs h1 {
+  font-size: 32pt;
+  text-transform: uppercase;
+}
+
+#new_refs p {
+  font-size: 26pt;
+}
+
+.chal_text {
+  column-count: 3;
+}
+
+.chal_text p {
+   margin-top: 0;
 }
 </style>
 

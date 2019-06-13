@@ -15,19 +15,13 @@ affiliation:
   - num: 2
     address: Their affiliation
     
-title_textsize: 120pt         # Poster title fontsize
+title_textsize: 140pt         # Poster title fontsize
 
 
 poster_height: "1189mm" # height in inches of poster
 poster_width: "841mm" # width in inches of poster
 font_family: Calibri # choose from typical html fonts (example: "Palatino")
 
-#---POSTER BODY OPTIONS---#
-body_bgcol: "#ffffff" #colour of the poster main background
-body_textsize: "32pt"    # Size of the main poster body text
-body_textcol: "#000000" # Colour of main text in the body of poster
-column_numbers: 2 # Number of columns that the poster has
-column_margins: "4.25cm" # Margin spacing for columns
 #SECTION TITLE STYLING
 sectitle_textcol: "#ffffff" # Colour of the poster section titles
 sectitle_textsize: "65pt"
@@ -57,47 +51,96 @@ knitr::opts_chunk$set(
 library(tidyverse)
 library(gapminder)
 library(gganimate)
+library(kableExtra)
 ```
 
 
 # Introduction
 This is the space to introduce your work in a few sentences. Describe what you do, the sort of data 
 you work with, and the questions you hope to answer. The text you write here will be placed above the
-two column format of the rest of the poster. It's important not to change the title of the section 
-from "Introduction" to make sure that happens correctly.
+two column format of the rest of the poster. Don't change the section title from "Information" 
+otherwise it won't work.
 
 # My Digital Toolbox
 
-Tell us about the digital tools you use
-
 This poster template is built with modifications from the `posterdown` package. You will need this 
-installed if you wish to build your own poster. See the [GitHub repo](https://github.com/brentthorne/posterdown)
-for more details, or use `remotes::install_github("brentthorne/posterdown")` to dive straight in. 
-# Methods
+installed if you wish to build your own poster. For complete installation instructions visit the 
+[GitHub repo](https://github.com/brentthorne/posterdown), or to dive straight in, use
+`remotes::install_github("brentthorne/posterdown")`.
 
-This package uses the same workflow approach as the R Markdown you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF. You can even use the bibliography the same way [@turnerControlsWaterBalance2014].
+You can use all the usual R markdown features in writing a poster including:
 
-## Random text
+* Lists
+* of
+* things
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu hendrerit tortor. Donec mi tellus, efficitur et porttitor eu, auctor eu tellus. Quisque faucibus vestibulum sapien vel lacinia. Ut auctor lorem non interdum blandit.
+## My favourite tool
 
-# Results
+In order to build the demo poster correctly, you will also need to have installed the `tidyverse`, 
+`gapminder`, `gganimate`, and `kableExtra` packages.
 
-Usually you want to have a nice table displaying some important results that you have calculated. In `posterdown` this is as easy as using the `kable` table formatting you are probably use to as per typical R Markdown formatting.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt 
+semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi 
+blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus
+nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu 
+hendrerit tortor.
 
-I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) [@kableExtra2019]. You can reference tables like so: Table \@ref(tab:mytable). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus nec viverra est.
+# I've got my eyes on
 
-```{r mytable, out.width='80%'}
-knitr::kable(iris[1:10, 1:4], caption = 'Table caption.',align = 'c',"html") %>% kableExtra::kable_styling("striped")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt 
+semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi 
+blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus
+nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu 
+hendrerit tortor.
+
+
+# Research SOS
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt 
+semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi 
+blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus
+nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu 
+
+The second half of the poster will demonstrate the different visuals you might use to show off your 
+data. To get tables formatting correctly, use `knitr::kable` to convert the table to html format. If
+you also want to have alternate row highlighting, pass the result to `kable_styling('striped')` 
+from the `kableExtra` package.
+
+To make sure your content distributes across the two columns correctly, you may need to add some 
+additional line breaks at this point to separate the text from the visuals:
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+#### Tables
+```{r mytable, out.width='100%', echo = T}
+knitr::kable(head(gapminder, n = 4), format = "html") %>% 
+  kable_styling("striped")
 ```
 
-Or with figures: Figure \@ref(fig:standard-plot), or Figure \@ref(fig:morefigs).
+#### Images from a file
 
-```{r standard-plot, out.width='80%', fig.align='center', fig.cap='Great figure!'}
-plot(mtcars[1:2])
+![](resources/img/posterdownlogo.png){width=180px}
+
+#### Plots from R
+```{r standard-plot, out.width='100%', fig.align='center', fig.height= 3, fig.width=8}
+gapminder %>% 
+  filter(year == 1987) %>% 
+  ggplot(aes(x = gdpPercap, y = lifeExp, colour = continent, size = pop)) +
+  geom_point() +
+  scale_x_log10(labels = function(b) format(b, scientific = F)) +
+  scale_size(trans = "sqrt", guide = "none") +
+  scale_color_brewer(palette = "Set1") +
+  theme_linedraw() +
+  theme(legend.position = "bottom")
 ```
 
-```{r anim, fig.align='center', cache=TRUE, out.width="80%"}
+
+#### Animations just to show off a digital poster
+```{r anim, fig.align='center', cache=TRUE, out.width="100%"}
 # cache=TRUE because the animations take a while to render
 # so we don't want to render them unless we change the code in here
 
@@ -117,3 +160,18 @@ animate(anim, nframes = 200, fps=20, detail = 2, start_pause = 20, end_pause=20,
         width=1200, height=800, res = 200
 )
 ```
+
+# Challenges
+
+This poster is mostly about celebrating your successes in Data School. However it is important to 
+acknowledge the challenges you have faced, or expect to face, in using your new skills. This is a
+space for you to talk about any areas you are not yet comfortable with, and it you have developed 
+any strategies for how to address these issues.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt 
+semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi 
+blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. 
+
+This section will also be shifted outside the two column format (to the bottom -- we don't want to dwell
+on the challenges too much!). As with the Introduction, don't change the name of this section otherwise 
+it will not be able to be moved.

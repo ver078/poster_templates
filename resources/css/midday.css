@@ -31,10 +31,28 @@ color: #00313C;
   color: #00313C;
 }
 
+code {
+  background-color: #00A9CE24;
+  color: #00313C;
+}
+
 .poster_body h1 {
   color: #00A9CE; 
 }
 
 .poster_body h2 {
   color: #00313C; 
+}
+
+#new_refs h1 {
+  color: #00A9CE;
+}
+
+.table th {
+  background-color: #00313C;
+  color: #ffffff;
+}
+
+.table-striped tr:nth-child(odd) {
+  background-color: #E9E9E9;
 }

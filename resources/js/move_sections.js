@@ -3,6 +3,9 @@ $(document).ready(function(){
  
  $("#introduction").children().appendTo($("#new_intro"));
  
+ $("#introduction").remove()
  
- $("#references").appendTo($("#new_refs"))
+ $("#challenges").appendTo($("#new_refs"));
+ 
+ $("#challenges").find("p").wrapAll("<div class='chal_text' />")
 });
