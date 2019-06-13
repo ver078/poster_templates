@@ -24,6 +24,7 @@ poster_width: "841mm" # width in inches of poster
 
 output: 
   posterdown::posterdown_html:
+    self_contained: FALSE
     number_sections: FALSE
     template: resources/html/template.html
 ---
@@ -92,9 +93,7 @@ blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliq
 nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt 
-semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi 
-blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus
-nec viverra est.
+semper. Donec elementum porta posuere. 
 
 The second half of the poster will demonstrate the different visuals you might use to show off your 
 data. To get tables formatting correctly, use `knitr::kable` to convert the table to html format. If
