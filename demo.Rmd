@@ -1,7 +1,8 @@
 ---
 title: A short title that describes your work
 business_unit: Business Unit
-theme: forest #options are midday, blueberry, sky, teal, mint, and forest
+theme: midday #options are midday, blueberry, sky, teal, mint, and forest
+
 author: 
   - name: "**Your Name**"
     affil: 1
@@ -17,12 +18,10 @@ affiliation:
     
 title_textsize: 140pt         # Poster title fontsize
 
-
+# A0 portrait size. Only option for now.
 poster_height: "1189mm" # height in inches of poster
 poster_width: "841mm" # width in inches of poster
-font_family: Calibri # choose from typical html fonts (example: "Palatino")
 
-#--Standard Options--#
 output: 
   posterdown::posterdown_html:
     self_contained: FALSE # Change this to TRUE if you need your poster portable as a single html file
@@ -38,6 +37,8 @@ knitr::opts_chunk$set(
   message = FALSE,
   fig.align = 'center'
 )
+
+#Load libraries
 library(tidyverse)
 library(gapminder)
 library(gganimate)
@@ -91,6 +92,11 @@ semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugia
 blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus
 nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu 
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt 
+semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi 
+blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus
+nec viverra est.
+
 The second half of the poster will demonstrate the different visuals you might use to show off your 
 data. To get tables formatting correctly, use `knitr::kable` to convert the table to html format. If
 you also want to have alternate row highlighting, pass the result to `kable_styling('striped')` 
@@ -102,20 +108,18 @@ additional line breaks at this point to separate the text from the visuals:
 <br/>
 <br/>
 <br/>
-<br/>
 
-
-#### Tables
+**Tables**
 ```{r mytable, out.width='100%', echo = T}
 knitr::kable(head(gapminder, n = 5), format = "html") %>% 
   kable_styling("striped")
 ```
 
-#### Images from a file
+**Images from a file**
 
 ![](resources/img/posterdownlogo.png){width=180px}
 
-#### Plots from R
+**Plots from R**
 ```{r standard-plot, out.width='100%', fig.align='center', fig.height= 3, fig.width=8}
 gapminder %>% 
   filter(year == 1987) %>% 
@@ -129,7 +133,7 @@ gapminder %>%
 ```
 
 
-#### Animations just to show off a digital poster
+**Animations just to show off a digital poster**
 ```{r anim, fig.align='center', cache=TRUE, out.width="100%"}
 # cache=TRUE because the animations take a while to render
 # so we don't want to render them unless we change the code in here
