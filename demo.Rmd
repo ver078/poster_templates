@@ -1,7 +1,7 @@
 ---
 title: A short title that describes your work
 business_unit: Business Unit
-theme: midday #options are midday
+theme: forest #options are midday, blueberry, sky, teal, mint, and forest
 author: 
   - name: "**Your Name**"
     affil: 1
@@ -22,16 +22,6 @@ poster_height: "1189mm" # height in inches of poster
 poster_width: "841mm" # width in inches of poster
 font_family: Calibri # choose from typical html fonts (example: "Palatino")
 
-#SECTION TITLE STYLING
-sectitle_textcol: "#ffffff" # Colour of the poster section titles
-sectitle_textsize: "65pt"
-sectitle_bgcol: "#0b4545" # Colour of the section title box
-sectitle_bordercol: "#0b4545" # Colour of the border around the section title box.
-sectitle_borderwidth: "2mm" # Thicknes of the section title box border
-sectitle_boxshape: "4mm 0mm" # Changes the shape of the section title box.
-sectitle2_textcol: "#0b4545" # Color of 2nd level header text.
-#--OTHER--#
-link_col: "#0b4545" #colour of other links within the poster
 #--Standard Options--#
 output: 
   posterdown::posterdown_html:
@@ -65,7 +55,7 @@ otherwise it won't work.
 
 This poster template is built with modifications from the `posterdown` package. You will need this 
 installed if you wish to build your own poster. For complete installation instructions visit the 
-[GitHub repo](https://github.com/brentthorne/posterdown), or to dive straight in, use
+[GitHub repo](https://github.com/brentthorne/posterdown), or to dive straight in, you can try
 `remotes::install_github("brentthorne/posterdown")`.
 
 You can use all the usual R markdown features in writing a poster including:
@@ -117,7 +107,7 @@ additional line breaks at this point to separate the text from the visuals:
 
 #### Tables
 ```{r mytable, out.width='100%', echo = T}
-knitr::kable(head(gapminder, n = 4), format = "html") %>% 
+knitr::kable(head(gapminder, n = 5), format = "html") %>% 
   kable_styling("striped")
 ```
 
