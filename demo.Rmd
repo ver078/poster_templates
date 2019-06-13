@@ -24,7 +24,6 @@ poster_width: "841mm" # width in inches of poster
 
 output: 
   posterdown::posterdown_html:
-    self_contained: FALSE # Change this to TRUE if you need your poster portable as a single html file
     number_sections: FALSE
     template: resources/html/template.html
 ---
