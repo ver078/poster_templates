@@ -1,0 +1,19 @@
+.BU_block a {
+  color: #00313C;
+  text-decoration: none;
+}
+
+/* unvisited link */
+a:link {
+color: #00313C;
+}
+
+/* visited link */
+a:visited {
+color: #00313C;
+}
+
+/* mouse over link */
+a:hover {
+color: #00A9CE;
+}
