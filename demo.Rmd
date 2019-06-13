@@ -1,17 +1,27 @@
 ---
-# PLEASE SEE THE README for in depth description github.com/brentthorne/posterdown
-#---POSTER SIZE & DEFAULT FONT---#
+title: A short title that describes your work
+business_unit: Business Unit
+theme: midday #options are midday
+author: 
+  - name: "**Your Name**"
+    affil: 1
+  - name: A Colleague
+    affil: 1
+  - name: A Collaborator
+    affil: 2
+affiliation: 
+  - num: 1
+    address: Your affiliation
+  - num: 2
+    address: Their affiliation
+    
+title_textsize: 120pt         # Poster title fontsize
+
+
 poster_height: "1189mm" # height in inches of poster
 poster_width: "841mm" # width in inches of poster
 font_family: Calibri # choose from typical html fonts (example: "Palatino")
-#---TITLE BOX OPTIONS---#
-#ESSENTIALS
-#STYLE & FORMATTING
-titlebox_borderwidth: 0
-titletext_fontfamily: Calibri
-title_textcol: "#ffffff" #colour of title text
-affiliation_textcol: "#FFFFFF" # Colour of affiliation text
-subtitle_textsize: "50pt"
+
 #---POSTER BODY OPTIONS---#
 body_bgcol: "#ffffff" #colour of the poster main background
 body_textsize: "32pt"    # Size of the main poster body text
@@ -31,10 +41,8 @@ link_col: "#0b4545" #colour of other links within the poster
 #--Standard Options--#
 output: 
   posterdown::posterdown_html:
-    self_contained: false
-    pandoc_args: --mathjax
-    highlight: tango
-    number_sections: false
+    self_contained: FALSE # Change this to TRUE if you need your poster portable as a single html file
+    number_sections: FALSE
     template: resources/html/template.html
 ---
 
@@ -47,40 +55,24 @@ knitr::opts_chunk$set(
   fig.align = 'center'
 )
 library(tidyverse)
+library(gapminder)
+library(gganimate)
 ```
 
----
-title: A short title that describes your work
-business_unit: Business Unit
-theme: midday #options are midday
-author: 
-  - name: "**Your Name**"
-    affil: 1
-  - name: A Colleague
-    affil: 1
-  - name: A Collaborator
-    affil: 2
-affiliation: 
-  - num: 1
-    address: Your affiliation
-  - num: 2
-    address: Their affiliation
-    
-title_textsize: 120pt         # Poster title fontsize
----
 
 # Introduction
 This is the space to introduce your work in a few sentences. Describe what you do, the sort of data 
-you work with, andthe questions you hope to answer. The text you write here will be placed above the
+you work with, and the questions you hope to answer. The text you write here will be placed above the
 two column format of the rest of the poster. It's important not to change the title of the section 
 from "Introduction" to make sure that happens correctly.
 
-# Objectives
+# My Digital Toolbox
 
-1. Easy to use reproducible poster design. 
-2. Integration with R Markdown.
-3. Easy transition from `posterdown` to `thesisdown` or `rticles` [@rticles; @thesisdown].
+Tell us about the digital tools you use
 
+This poster template is built with modifications from the `posterdown` package. You will need this 
+installed if you wish to build your own poster. See the [GitHub repo](https://github.com/brentthorne/posterdown)
+for more details, or use `remotes::install_github("brentthorne/posterdown")` to dive straight in. 
 # Methods
 
 This package uses the same workflow approach as the R Markdown you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF. You can even use the bibliography the same way [@turnerControlsWaterBalance2014].
@@ -101,6 +93,27 @@ knitr::kable(iris[1:10, 1:4], caption = 'Table caption.',align = 'c',"html") %>%
 
 Or with figures: Figure \@ref(fig:standard-plot), or Figure \@ref(fig:morefigs).
 
-```{r standard-plot, out.width='80%', fig.align='center', fig.cap='Great figure!', fig.height=10}
+```{r standard-plot, out.width='80%', fig.align='center', fig.cap='Great figure!'}
 plot(mtcars[1:2])
+```
+
+```{r anim, fig.align='center', cache=TRUE, out.width="80%"}
+# cache=TRUE because the animations take a while to render
+# so we don't want to render them unless we change the code in here
+
+anim <- gapminder %>% 
+  ggplot(aes(x = gdpPercap, y = lifeExp, colour = continent, size = pop)) +
+  geom_point() +
+  scale_x_log10(labels = function(b) format(b, scientific = F)) +
+  scale_size(trans = "sqrt", guide = "none") +
+  scale_color_brewer(palette = "Set1") +
+  theme_linedraw() +
+  theme(legend.position = "bottom") +
+  transition_time(year) +
+  ease_aes("cubic-in-out")
+
+
+animate(anim, nframes = 200, fps=20, detail = 2, start_pause = 20, end_pause=20, 
+        width=1200, height=800, res = 200
+)
 ```

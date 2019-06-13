@@ -114,8 +114,10 @@ border: 0;
 font-weight: normal;
 }
 .poster_body_wrap{
+position: absolute;
+top: calc($poster_height$ * 0.25);
 width: 90%;
-height: calc($poster_height$ * 0.635);
+height: calc($poster_height$ * 0.63);
 padding-top: calc($poster_height$ * 0.01);
 padding-bottom: calc($poster_height$ * 0.01);
 margin-left: 5%;
@@ -159,6 +161,7 @@ font-weight: normal;
   margin-top: 2%;
   margin-left: 5%;
   margin-right: 20%;
+  font-size: 44pt;
 }
 .introduction p{
   margin-bottom: 0;
@@ -172,20 +175,16 @@ margin-bottom: 0;
 }
 .poster_body h1 {
 text-align: center;
-color: $sectitle_textcol$;
-font-size: $sectitle_textsize$;
-border: $sectitle_borderwidth$ solid $sectitle_bordercol$;
-background-color: $sectitle_bgcol$;
-border-radius: $sectitle_boxshape$;
+font-size: 60pt;
 margin-top: 2mm;
 margin-bottom: 2mm;
-font-weight: normal;
+font-weight: bold;
 }
 .poster_body h2 {
 color: $sectitle2_textcol$;
-font-size: 40pt;
+font-size: 44pt;
 padding-left: 4mm;
-font-weight: normal;
+font-weight: bold;
 }
 .span h1 {
 text-align: center;
