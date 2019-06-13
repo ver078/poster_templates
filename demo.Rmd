@@ -11,10 +11,7 @@ titlebox_borderwidth: 0
 titletext_fontfamily: Calibri
 title_textcol: "#ffffff" #colour of title text
 affiliation_textcol: "#FFFFFF" # Colour of affiliation text
-title_textsize: "110pt"         # Poster title fontsize
 subtitle_textsize: "50pt"
-author_textsize: "28pt"       # Author list font size
-affiliation_textsize: "28pt"  # Affiliation font size
 #---POSTER BODY OPTIONS---#
 body_bgcol: "#ffffff" #colour of the poster main background
 body_textsize: "32pt"    # Size of the main poster body text
@@ -37,7 +34,7 @@ output:
     self_contained: false
     pandoc_args: --mathjax
     highlight: tango
-    number_sections: true
+    number_sections: false
     template: resources/html/template.html
 ---
 
@@ -53,22 +50,30 @@ library(tidyverse)
 ```
 
 ---
-title: 'Using posterdown to generate reproducible conference posters'
-subtitle: 'via a RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF workflow'
-business_unit: "Land and Water"
-theme: midday
+title: A short title that describes your work
+business_unit: Business Unit
+theme: midday #options are midday
 author: 
-  - name: Brent Thorne
+  - name: "**Your Name**"
     affil: 1
-  - name: Another Contributor
+  - name: A Colleague
+    affil: 1
+  - name: A Collaborator
     affil: 2
 affiliation: 
   - num: 1
-    address: Department of Earth Science, Brock University
+    address: Your affiliation
   - num: 2
-    address: Department of Graphics and Layouts, University of Posters; Canada
-intro: Welcome to `posterdown`! This is my attempt to provide a semi-smooth workflow for those who wish to take their R Markdown skills to the conference world. Most features from R Markdown are available in this package such as Markdown section notation, figure captioning, and even citations like this one [@rmarkdown]. The rest of this example poster will show how you can insert typical conference poster features into your own document. 
+    address: Their affiliation
+    
+title_textsize: 120pt         # Poster title fontsize
 ---
+
+# Introduction
+This is the space to introduce your work in a few sentences. Describe what you do, the sort of data 
+you work with, andthe questions you hope to answer. The text you write here will be placed above the
+two column format of the rest of the poster. It's important not to change the title of the section 
+from "Introduction" to make sure that happens correctly.
 
 # Objectives
 

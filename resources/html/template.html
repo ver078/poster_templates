@@ -6,6 +6,7 @@
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 
 <!--
 Font-awesome icons ie github or twitter
@@ -52,7 +53,6 @@ width: $poster_width$;
 height: $poster_height$;
 padding: 0;
 text-align: justify;
-color: #ffffff;
 font-family: Calibri;
 background-image: url(resources/background/poster-$theme$.svg);
 background-size: cover;
@@ -68,6 +68,7 @@ width: $poster_width$;
 height: calc($poster_height$ * 0.145);
 text-align: left;
 overflow: hidden;
+color: #ffffff;
 }
 .poster_title {
 text-align: $title_textalign$;
@@ -76,27 +77,8 @@ float: left;
 height: 100%;
 margin-left: 5%;
 margin-right: 5%;
-margin-top: 1%;
+margin-top: 6%;
 
-}
-/* unvisited link */
-a:link {
-color: $link_col$;
-}
-
-/* visited link */
-a:visited {
-color: $link_col$;
-}
-
-/* mouse over link */
-a:hover {
-color: $link_col$;
-}
-
-/* selected link */
-a:active {
-color: $link_col$;
 }
 .poster_body {
 -webkit-column-count: $column_numbers$; /* Chrome, Safari, Opera */
@@ -122,10 +104,11 @@ color: $body_textcol$;
 font-size: $title_textsize$;
 margin: 0;
 border: 0;
+height: 45%;
 font-weight: normal;
 }
 .poster_title h2 {
-font-size: $subtitle_textsize$;
+font-size: 50pt;
 margin: 0;
 border: 0;
 font-weight: normal;
@@ -139,15 +122,19 @@ margin-left: 5%;
 margin-right: 5%;
 }
 .poster_title h3 {
-color: $author_textcol$;
-font-size: $author_textsize$;
+font-size: 28pt;
 margin: 0;
 border: 0;
+margin-bottom: 1%;
 font-weight: normal;
 }
+
+.poster_title h3 strong {
+  text-decoration: underline;
+}
+
 .poster_title h5 {
-color: $affiliation_textcol$;
-font-size: $affiliation_texsize$;
+font-size: 28pt;
 margin: 0;
 border: 0;
 font-weight: normal;
@@ -163,7 +150,7 @@ font-weight: normal;
 }
 #BU {
   text-transform: uppercase;
-  margin: 20px 5% -10px 5%;
+  margin: 22px 5% -4px 5%;
   color: #ffffff;
   font-size: 38pt;
   font-weight: bold;
@@ -326,8 +313,7 @@ $endfor$
   <p id="BU">$business_unit$</p>
   <p id="BU_link"><a href="http://www.csiro.au">www.csiro.au</a></p>
 </div>
-<div class="introduction">
-<p>$intro$</p>
+<div id="new_intro" class="introduction">
 </div>
 
 <div class='poster_body_wrap'>
@@ -354,6 +340,8 @@ document.getElementsByTagName("head")[0].appendChild(script);
 })();
 </script>
 $endif$
+
+<script type="text/javascript" src="resources/js/move_sections.js"></script>
 
 $for(include-after)$
 $include-after$
