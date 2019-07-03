@@ -5,7 +5,7 @@ $(document).ready(function(){
  
  $("#introduction").remove()
  
- $("#challenges").appendTo($("#new_refs"));
+ $("#my-data-school-experience").appendTo($("#new_refs"));
  
- $("#challenges").find("p").wrapAll("<div class='chal_text' />")
+ $("#my-data-school-experience").find("p").wrapAll("<div class='chal_text' />")
 });

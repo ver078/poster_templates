@@ -160,11 +160,14 @@ font-weight: normal;
 .introduction {
   margin-top: 2%;
   margin-left: 5%;
-  margin-right: 20%;
+  margin-right: 17%;
   font-size: 40pt;
+  display: flex;
+  align-items: center;
 }
 .introduction p{
   margin-bottom: 0;
+  margin-top: 0;
 }
 img {
   margin-bottom: 0;
@@ -307,6 +310,22 @@ font-size: 20pt;
 .chal_text p {
    margin-top: 0;
 }
+
+#affiliation i {
+  vertical-align: text-bottom;
+}
+
+#affiliation a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.photo {
+  float: left;
+  margin-right: 2%;
+  height: 170px;
+  border-radius: 50%;
+}
 </style>
 
 
@@ -329,8 +348,8 @@ $endfor$
 <div class= "poster_title">
 <h1 id="title">$title$</h1>
 <h2 id="subtitle">$subtitle$</h2>
-<h3 id="author">$for(author)$$author.name$<sup>$author.affil$</sup>$sep$, $endfor$</h3>
-<h5 id="affiliation">$for(affiliation)$<sup>$affiliation.num$</sup> $affiliation.address$$sep$, $endfor$</h5>
+<h3 id="author">$author$</h3>
+<h5 id="affiliation"><i class='fab fa-github'></i> <a href="$github_link$">$github_link$</a> $if(dap_link)$ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAP: $dap_link$ $endif$</h5>
 
 </div>
 </div>
@@ -339,6 +358,7 @@ $endfor$
   <p id="BU_link"><a href="http://www.csiro.au">www.csiro.au</a></p>
 </div>
 <div id="new_intro" class="introduction">
+  <img class='photo' src="$photo$">
 </div>
 
 <div class='poster_body_wrap'>
