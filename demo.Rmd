@@ -67,7 +67,7 @@ You can use all the usual R markdown features in writing a poster including:
 * Python
 * SQL
 
-## My favourite tool (optional)
+## Favourite tool (optional)
 
 Is there any tool in particular that you've enjoyed using? Give it a special shout out here.
 
@@ -75,16 +75,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue 
 semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi 
 blandit eros, eu posuere risus felis non quam. Nam eget lorem odio.
 
+# My time went ...
+
+What parts of the project took the most time and effort? Were there any surprising challenges you
+encountered, and how did you solve them?
+
 # Next steps
 
 What further steps do you wish your project could take? Or are there any new digital skills that you
 are keen to develop as a result of the work on your synthesis project?
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt 
-semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi 
-blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus
-nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu 
-hendrerit tortor.
 
 The second half of the poster will demonstrate the different visuals you might use to show off your 
 data. To get tables formatting correctly, use `knitr::kable` to convert the table to html format. If
