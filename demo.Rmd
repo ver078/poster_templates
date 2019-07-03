@@ -3,19 +3,11 @@ title: A short title that describes your work
 business_unit: Business Unit
 theme: midday #options are midday, blueberry, sky, teal, mint, and forest
 
-author: 
-  - name: "**Your Name**"
-    affil: 1
-  - name: A Colleague
-    affil: 1
-  - name: A Collaborator
-    affil: 2
-affiliation: 
-  - num: 1
-    address: Your affiliation
-  - num: 2
-    address: Their affiliation
-    
+author:  "**Your Name**"
+github_link: www.github.com/user/project
+dap_link: https://doi.org/10.4225/08/5756169E381CC # optional
+photo: resources/img/photo.jpeg
+
 title_textsize: 140pt         # Poster title fontsize
 
 # A0 portrait size. Only option for now.
@@ -47,53 +39,52 @@ library(kableExtra)
 
 
 # Introduction
-This is the space to introduce your work in a few sentences. Describe what you do, the sort of data 
-you work with, and the questions you hope to answer. The text you write here will be placed above the
-two column format of the rest of the poster. Don't change the section title from "Information" 
+Who am I? Where am I from? Could I code before Data School? What did my daily work pattern look like 
+before Data School? Etc. The text you write here will be placed above the
+two column format of the rest of the poster. Don't change the section title from "Introduction" 
 otherwise it won't work.
 
-# My Digital Toolbox
+# My Synthesis Project
+This is the space to introduce your project in a few sentences. What were your goals, what was your 
+data, how did you plan to approach it?
 
 This poster template is built with modifications from the `posterdown` package. You will need this 
 installed if you wish to build your own poster. For complete installation instructions visit the 
 [GitHub repo](https://github.com/brentthorne/posterdown), or to dive straight in, you can try
 `remotes::install_github("brentthorne/posterdown")`.
 
-You can use all the usual R markdown features in writing a poster including:
-
-* Lists
-* of
-* things
-
-## My favourite tool
-
-In order to build the demo poster correctly, you will also need to have installed the `tidyverse`, 
+In order to build this demo poster correctly, you will also need to have installed the `tidyverse`, 
 `gapminder`, `gganimate`, and `kableExtra` packages.
 
+# My Digital Toolbox
+
+What digital tools have you been using in your project? Which ones have you learned since starting 
+Data School?
+
+You can use all the usual R markdown features in writing a poster including:
+
+* R - dplyr, ggplot, ...
+* Python
+* SQL
+
+## My favourite tool (optional)
+
+Is there any tool in particular that you've enjoyed using? Give it a special shout out here.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt 
+semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi 
+blandit eros, eu posuere risus felis non quam. Nam eget lorem odio.
+
+# Next steps
+
+What further steps do you wish your project could take? Or are there any new digital skills that you
+are keen to develop as a result of the work on your synthesis project?
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt 
 semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi 
 blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus
 nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu 
 hendrerit tortor.
-
-# I've got my eyes on
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt 
-semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi 
-blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus
-nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu 
-hendrerit tortor.
-
-
-# Research SOS
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt 
-semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi 
-blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus
-nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt 
-semper. Donec elementum porta posuere. 
 
 The second half of the poster will demonstrate the different visuals you might use to show off your 
 data. To get tables formatting correctly, use `knitr::kable` to convert the table to html format. If
@@ -153,17 +144,16 @@ animate(anim, nframes = 200, fps=20, detail = 2, start_pause = 20, end_pause=20,
 )
 ```
 
-# Challenges
+# My Data School Experience
 
-This poster is mostly about celebrating your successes in Data School. However it is important to 
-acknowledge the challenges you have faced, or expect to face, in using your new skills. This is a
-space for you to talk about any areas you are not yet comfortable with, and it you have developed 
-any strategies for how to address these issues.
+This poster is mostly about your synthesis project. However we would also like to hear about other
+parts of your Data School experience. What aspects of the program did you really enjoy? How have you
+been applying the skills you have learned in your daily work? Have you been able to transfer this 
+knowledge to your team members? Concrete examples demonstrating this would be useful here
+(meetings/talks/collaborations/new roles). Any descriptions of the personal impact the program has 
+had are welcome here as well
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt 
-semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi 
-blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. 
+This section will also be shifted outside the two column format (to the bottom -- the focus of this
+poster should be on your achievements in your project!). As with the Introduction, don't change the
+name of this section otherwiseit will not be able to be moved.
 
-This section will also be shifted outside the two column format (to the bottom -- we don't want to dwell
-on the challenges too much!). As with the Introduction, don't change the name of this section otherwise 
-it will not be able to be moved.
